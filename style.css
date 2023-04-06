@@ -20,6 +20,9 @@ li, a, button {
 button{
     background-color: white;
 }
+iframe{
+    filter: grayscale();
+}
 
 /* Splash Screen */
 .intro {
