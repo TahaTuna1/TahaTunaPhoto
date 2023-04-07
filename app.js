@@ -11,10 +11,8 @@ async function generateMasonryGrid(columns, posts, sleepTime){
     const container = document.querySelector(`.container`);
 
     container.innerHTML = ``;
-    //Store all column arrays which contain the relevant posts
-    let columnWrappers = {};
 
-        //Create column item array and add this to columnwrapper object
+    let columnWrappers = {};
     for(let i = 0; i < columns; i++){
         columnWrappers[`column${i}`] = []
     }
@@ -74,7 +72,7 @@ window.addEventListener('resize', () =>{
     previousScreenSize = window.innerWidth;
 })
 
-//Page Load
+//Initial Page Load
 
 if(previousScreenSize < 650){
     generateMasonryGrid(2, posts, 1);
