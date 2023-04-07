@@ -1,11 +1,11 @@
+/* This file reads the directories and writes them to the local file 'images.json' to be fetched later. 
+It uses node.js. Express.js dependency removed. 
+IMPORTANT : Need to run this script every time the photos are changed/updated.
+ */
+
 
 const fs = require('fs');
 const path = require('path');
-const app = require('express')();
-const cors = require('cors');
-const PORT = 8080;
-
-app.use(cors());
 
 const imageFolders = [
     { folder: './images', name: 'imagesMain' },
@@ -30,15 +30,26 @@ const getImages = () => {
     });
     imageFiles[folder.name] = folderFiles;
   });
+  fs.writeFileSync('./images.json', JSON.stringify(imageFiles));
+  console.log("Files written to ./images.json");
     /*console.log("Inside the array, there are " + imageFiles.length + " images.")*/
     return imageFiles;
 }
 
+getImages();
 /*console.log("Outside the array, there are " + imageFiles.length + " images."); */
 
 
 
 
+/* Express JS Solution adn Dependency removed as of 07/04/2023. Writing image names to local json file instead. Node.js only.*/
+
+/*const app = require('express')();*/
+/*const cors = require('cors');*/
+/*const PORT = 8080;*/
+
+/*app.use(cors());*/
+/*
 app.listen(
     PORT,
     () => console.log(`it is alive on http://localhost:${PORT}`)
@@ -46,5 +57,7 @@ app.listen(
 
 app.get('/images', (req, res) => {
     const images = getImages();
+  
     res.status(200).json({ images });
 });
+*/

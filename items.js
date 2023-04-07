@@ -3,7 +3,20 @@ var posts = [];
 let imageFiles = [];
 var imageIndex = 0;
 
-console.log(imageFiles.length + " images before fetch");
+fetch('./images.json') /* Fetching JSON from local file instead. */
+  .then(response => response.json())
+  .then(data => {
+
+    console.log(data);
+        createPosts(data.imagesMain, "Main");    
+        createPosts(data.street, "Street");
+        createPosts(data.product, "Product");
+        createPosts(data.portrait, "Portrait");
+        createPosts(data.stage, "Stage");
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
 
 function createPosts(pageImageArray, arrayName){
@@ -18,7 +31,7 @@ function createPosts(pageImageArray, arrayName){
          image: pageImageArray[imageIndex]
      }
      posts.push(item);
-     console.log("imageAdded");
+     console.log("images added to " + arrayName);
      imageIndex++;
      if(imageIndex > pageImageArray.length - 1) imageIndex = 0;
     }
@@ -26,7 +39,11 @@ function createPosts(pageImageArray, arrayName){
     localStorage.setItem(`posts${arrayName}`, JSON.stringify(posts)); 
 }
 
+localStorage.setItem('visited', true);
 
+
+/* Express JS Solution Removed 07/04/2023. Writing image names to local json file instead. Node.js only.*/
+/* 
 async function fetchImages() {
     try{
         const response = await fetch('http://localhost:8080/images');
@@ -40,6 +57,7 @@ async function fetchImages() {
         console.log(imageFiles);
         // Call the function that uses the imageFiles array here
         
+        
         createPosts(imagesMain, "Main");
         createPosts(street, "Street");
         createPosts(product, "Product");
@@ -49,12 +67,12 @@ async function fetchImages() {
     }catch (error) {
         console.error(`ERROR ${error}`)
         console.log("Failed. Retrying...")
-        /* ADD SOME SORT OF RETRY FUNCTION*/
+
     }
 }
 
 fetchImages();
-
+*/
 
 
 /*
