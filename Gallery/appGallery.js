@@ -70,26 +70,23 @@ async function generateMasonryGrid(columns, storedPosts){
 }
 
 let previousScreenSize = window.innerWidth;
+
 window.addEventListener('resize', () =>{
     imageIndex = 0;
     if(window.innerWidth < 650 && previousScreenSize > 650){
         generateMasonryGrid(2, storedPosts, 0);
-    }else if(window.innerWidth >= 650 && window.innerWidth < 1100 &&(previousScreenSize < 650 || previousScreenSize >= 1100)){
+    } else if (window.innerWidth >= 650 && previousScreenSize < 650) {
         generateMasonryGrid(3, storedPosts, 0);
-    }else if(window.innerWidth >= 1100 && previousScreenSize < 1100){
-        generateMasonryGrid(4, storedPosts, 0);
     }
     previousScreenSize = window.innerWidth;
-})
+});
 
 //Page Load
 
 if(previousScreenSize < 650){
     generateMasonryGrid(2, storedPosts, 1);
-}else if(previousScreenSize >= 650 & previousScreenSize <1100){
+}else{
     generateMasonryGrid(3, storedPosts, 1);
-} else{
-    generateMasonryGrid(4, storedPosts, 1);
 }
 
 async function sleep(seconds){
