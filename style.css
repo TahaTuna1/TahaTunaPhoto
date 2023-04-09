@@ -6,10 +6,6 @@
     font-family: 'Oswald', sans-serif;
 }
 
-html, body{
-
-    min-width: 600px;
-}
 body {
     overflow-x: hidden;
 }
