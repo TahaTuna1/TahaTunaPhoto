@@ -35,7 +35,7 @@
   .projectChildText p {
     text-align: center;
     margin: 0.5vw;
-    color: #828282;
+    color: #888;
     font-size: 1.6vw;
   }
   .projectChildText button{
@@ -44,15 +44,6 @@
       padding: 1.5vw 5vw;
   }
   
-
-
-
-
-
-
-
-
-
 /* Contact Form */ 
 
 .contactMain,
@@ -181,16 +172,16 @@ fieldset {
     .projectMain{
         display: block;
     }
-    .projectChildText h1{
-        font-size: 5vw;
+    .projectMain .projectChildText h1{
+        font-size: 8vw;
     }
     .projectChildText p{
-        font-size: 3vw;
+        font-size: 2vw;
     }
-    .projectChildText button{
-        font-size: 3vw;
-        margin-bottom: 3vw;
-        padding: 3vw 7vw;
+    .projectMain .projectChildText button{
+        font-size: 5vw;
+        margin: 4vw;
+        padding: 5vw 7vw;
     }
     .projectChildImg img{
       height: 320px;
@@ -198,10 +189,16 @@ fieldset {
       overflow: hidden;
     }
     .projectMain h1{
-        font-size: 5vw;
+        font-size: 4vw;
     }
     .projectMain p{
+        font-size: 6vw;
+    }
+    .contactText{
         font-size: 3vw;
+    }
+    .contactText button{
+        padding: 5vw 10vw;
     }
 }
 
@@ -210,7 +207,7 @@ fieldset {
         display: block;
     }
     .contactMain button{
-        padding: 3vw auto;
+        padding: 5vw auto;
     }
     #contact input[type="text"],
     #contact input[type="email"],
