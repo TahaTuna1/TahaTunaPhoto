@@ -8,6 +8,7 @@
 
 body {
     overflow-x: hidden;
+    min-width: none;
 }
 
 li, a, button {
@@ -247,7 +248,6 @@ footer h4{
 footer p{
     font-weight: lighter;
 }
-
 .footerLeft{
     text-align: left;
 }
@@ -256,10 +256,7 @@ footer p{
     text-align: right;
 }
 
-
 /* GALLERY */
-
-
 .galleryMain {
     display:flex;
     flex-wrap: wrap;
@@ -347,10 +344,6 @@ footer p{
     font-weight:normal;
 
 }
-
-
-
-
 /* WINDOW RESIZE */
 @media all and (max-width: 650px){
     .header{
