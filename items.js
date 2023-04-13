@@ -99,8 +99,6 @@ const imageFiles = [
     "images/DSCF8322_exp1.jpg"
 ]; */
 
- /* Google API KEY: AIzaSyBZqtrFg3IkSUXc4G4UrTH_oi2-jrL02e0  */
-
         
         
 
